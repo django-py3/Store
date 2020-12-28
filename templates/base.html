@@ -17,7 +17,7 @@ crossorigin="anonymous">
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-  <a class="navbar-brand" href="{% url 'home' %}">Главна</a>  | <a class="navbar-brand" href="{% url 'books' %}">Книги</a> | <a class="navbar-brand" href="{% url 'journals' %}">Журналы</a> | <a class="navbar-brand" href="{% url 'articles' %}">Статьи</a>  | <a class="navbar-brand" href="{% url 'items' %}">Товары</a>
+  <a class="navbar-brand" href="{% url 'home' %}">Главная</a>  | <a class="navbar-brand" href="{% url 'books' %}">Книги</a> | <a class="navbar-brand" href="{% url 'journals' %}">Журналы</a> | <a class="navbar-brand" href="{% url 'articles' %}">Статьи</a>  | <a class="navbar-brand" href="{% url 'items' %}">Товары</a>
     
    {% if user.is_superuser %}
       <ul class="navbar-nav mr-auto">
