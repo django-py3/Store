@@ -1,0 +1,20 @@
+<!--templates/home.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+<p>
+    <h3>Sort: <a class="btn btn-primary btn-lg" href="{% url 'journals_reversed_desc' %}">desc</a>
+    |
+    <a class="btn btn-primary btn-lg" href="{% url 'journals_reversed_asc' %}">asc</a></h3>
+</p>
+    {% for journal in journals %}
+        <div class = "journal-entry">
+            <h2>
+                <a href="{% url 'detail_journal' journal.pk %}">{{ journal.title }}</a>
+            </h2>
+            <p>
+                {{ journal.journalauthor }}<br><b>Количество страниц:</b> {{ journal.journalspagecount }}
+            </p>
+        </div>
+    {% endfor %}
+{% endblock content%}

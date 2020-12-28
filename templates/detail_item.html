@@ -1,0 +1,23 @@
+<!--templates/detail_article.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="article-entry">
+        <h2>{{ item.title }}</h2>
+        <br>Остаток: <span class="font-weight-bold">{{ item.amount }}</span>
+                <br>Дата поступления: <span class="font-weight-bold">{{ item.date }}</span>
+                |
+                <br><span class="text-muted">
+                    Продавец: {{ item.owner }} 
+                    <br>Цена: {{item.price}}
+                </span>
+    </div>
+    <p>
+        <a href="{% url 'edit_item' item.pk %}">Edit</a>
+        |
+        <a href="{% url 'delete_item' item.pk %}">Delete</a>
+    </p>
+    <p>Back to
+        <a href="{% url 'items' %}">All Items</a>
+    </p>
+{% endblock content %}

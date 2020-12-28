@@ -1,0 +1,29 @@
+<!--templates/list_articles.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for item in list_items %}
+        <div class="card">
+            <!--Шапка карточки статьи-->
+            <div class="card-header">
+                <h2>
+                    <a href="{% url 'detail_item' item.pk %}">{{ item.title }}</a>
+                </h2>
+                <br>Остаток: <span class="font-weight-bold">{{ item.amount }}</span>
+                <br>Дата поступления: <span class="font-weight-bold">{{ item.date }}</span>
+                |
+                <br><span class="text-muted">
+                    Продавец: {{ item.owner }} 
+                    <br> Цена: {{item.price}}
+                </span>
+            </div>
+            <!--Подвал карточки статьи-->
+            <div class="card-footer text-center text-muted">
+                <a href="{% url 'edit_item' item.pk %}">Edit</a> 
+                | 
+                <a href="{% url 'delete_item' item.pk %}">Delete</a>
+            </div>
+        </div>
+        <br/>
+    {% endfor %}
+{% endblock content %}

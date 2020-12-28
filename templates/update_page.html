@@ -1,0 +1,11 @@
+<!--templates/update_post.html-->
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h1>Update this Page</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input class="btn btn-success ml-2" type="submit" value="Update" />
+    </form>
+{% endblock content %}

@@ -1,0 +1,16 @@
+<!--templates/detail_post.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="page-entry">
+        <h2>{{ page.title }}</h2>
+        <p>
+            {{ page.pagebody }}
+        </p>
+        <p>Автор статьи: {{ page.author }}</p>
+    </div>
+    {% if user.is_superuser %}
+    <a href="{% url 'update_page' page.pk %}">+ Update Page</a>
+    <a href="{% url 'delete_page' page.pk %}">- Delte Page</a>
+    {% endif %}
+{% endblock content %}

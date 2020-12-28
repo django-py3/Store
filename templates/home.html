@@ -1,0 +1,15 @@
+<!--templates/home.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for page in pages %}
+        <div class = "page-entry">
+            <h2>
+                <a href="{% url 'detail_page' page.pk %}">{{ page.title }}</a>
+            </h2>
+            <p>
+                {{ page.body }}
+            </p>
+        </div>
+    {% endfor %}
+{% endblock content%}

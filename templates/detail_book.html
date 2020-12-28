@@ -1,0 +1,14 @@
+<!--templates/detail_post.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="book-entry">
+        <h2>{{ book.title }}</h2>
+        <p>
+            <b>Автор книги:</b> {{ book.bookauthor }}<br><b>Рейтинг:</b> {{ book.bookrejting }}
+            <br><br>Краткое описание:<i> {{ book.body }}</i>
+            
+        </p>
+        <p>Размещено пользователем: {{ book.author }}</p>
+    </div>
+{% endblock content %}

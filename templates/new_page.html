@@ -1,0 +1,13 @@
+<!--templates/new_post.html-->
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h1>New Page</h1>
+    <!--Здесь начинается веб-форма-->
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <!--Подтверждение формы-->
+        <input class="btn btn-success ml-2" type="submit" value="Create" />
+    </form>
+{% endblock content %}

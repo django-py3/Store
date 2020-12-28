@@ -1,0 +1,20 @@
+<!--templates/home.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+<p>
+    <h3>Sort: <a class="btn btn-primary btn-lg" href="{% url 'books_reversed_desc' %}">desc</a>
+    |
+    <a class="btn btn-primary btn-lg" href="{% url 'books_reversed_asc' %}">asc</a></h3>
+</p>
+    {% for book in books %}
+        <div class = "book-entry">
+            <h2>
+                <a href="{% url 'detail_book' book.pk %}">{{ book.title }}</a>
+                </h2>
+                <p>                
+                    {{ book.bookauthor }}<br><b>Рейтинг:</b> {{ book.bookrejting }}
+                </p>
+        </div>
+    {% endfor %}
+{% endblock content%}

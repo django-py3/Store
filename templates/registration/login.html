@@ -1,0 +1,12 @@
+<!--templates/registration/login.html-->
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h2>Страница входа</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button class="btn btn-success ml-2" type="submit">Вход</button>
+    </form>
+{% endblock content %}

@@ -1,0 +1,14 @@
+<!--templates/detail_post.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="journal-entry">
+        <h2>{{ journal.title }}</h2>
+        <p>
+            <b>Автор журнала:</b> {{ journal.journalauthor }}<br><b>Количество страниц:</b> {{ journal.journalspagecount }}
+            <br><br>Краткое описание:<i> {{ journal.body }}</i>
+            
+        </p>
+        <p>Размещено пользователем: {{ journal.author }}</p>
+    </div>
+{% endblock content %}
